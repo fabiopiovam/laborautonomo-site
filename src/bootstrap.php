@@ -17,7 +17,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app['twig']->addFilter('nl2br', new Twig_Filter_Function('nl2br', array('is_safe' => array('html'))));
 
 //REGISTER ERROR HANDLERS
-$app->error(function (\Exception $e, $code) {
+$app->error(function (\Exception $e, $code) use ($app) {
     switch ($code) {
         case 404:
             $message = 'The requested page could not be found.';
