@@ -23,7 +23,6 @@ $app['translator'] = $app->share($app->extend('translator', function($translator
     return $translator;
 }));
 
-var_dump($app['translator']->getLocale());
 $app['translator']->setLocale('pt_BR');
 
 //TWIG
