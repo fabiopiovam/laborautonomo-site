@@ -30,14 +30,14 @@ class __TwigTemplate_eeeb2ea6d134092de372d3afe8c3b2e9 extends Twig_Template
         // line 4
         echo "<center>
     <br /><br />
-    <h1>Site em construção </h1>
-    <h3>Por favor, aguardem...</h3>
-    <br /><br />
-    <h1>Sitio en construcción</h1>
-    <h3>Por favor, espera...</h3>
-    <br /><br />
-    <h1>Site under construction</h1>
-    <h3>Please wait...</h3>
+    <h1>";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Site em construção"), "html", null, true);
+        echo "</h1>
+    <h3>";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Por favor, aguardem..."), "html", null, true);
+        echo "</h3>
 </center>
 ";
     }
@@ -54,6 +54,6 @@ class __TwigTemplate_eeeb2ea6d134092de372d3afe8c3b2e9 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  39 => 7,  35 => 6,  31 => 4,  28 => 3,);
     }
 }

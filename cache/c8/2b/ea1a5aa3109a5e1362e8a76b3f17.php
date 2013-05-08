@@ -30,8 +30,14 @@ class __TwigTemplate_c82bea1a5aa3109a5e1362e8a76b3f17 extends Twig_Template
     <body>
         <nav>
             <ul>
-                <li><a href=\"/\">Home</a></li>
-                <li><a href=\"/contact\">Contact</a></li>
+                <li><a href=\"/\">";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Início"), "html", null, true);
+        echo "</a></li>
+                <li><a href=\"/contact\">";
+        // line 11
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Contato"), "html", null, true);
+        echo "</a></li>
             </ul>
         </nav>
 
@@ -58,8 +64,13 @@ class __TwigTemplate_c82bea1a5aa3109a5e1362e8a76b3f17 extends Twig_Template
         return "base.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  52 => 15,  47 => 5,  42 => 16,  40 => 15,  27 => 5,  21 => 1,  31 => 4,  28 => 3,);
+        return array (  58 => 15,  53 => 5,  48 => 16,  46 => 15,  39 => 11,  35 => 10,  27 => 5,  21 => 1,);
     }
 }
