@@ -28,7 +28,7 @@ $app['translator']->setLocale('pt_BR');
 //TWIG
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
-    'twig.options' => array('cache' => __DIR__.'/../cache', 'debug' => $app['debug']),
+    //'twig.options' => array('cache' => __DIR__.'/../cache', 'debug' => $app['debug']),
 ));
 $app['twig']->addFilter('nl2br', new Twig_Filter_Function('nl2br', array('is_safe' => array('html'))));
 

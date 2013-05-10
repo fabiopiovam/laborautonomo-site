@@ -3,8 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>{% block title %}{% endblock %} &raquo; LaborAutonomo</title>
+        {% block header %}
+        <link rel="stylesheet" href="css/structure.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        {% endblock %}
     </head>
     <body>
-        {% block content %}{% endblock %}
+        <div id='spine'>
+            {% block content %}{% endblock %}
+        </div>
     </body>
 </html>
