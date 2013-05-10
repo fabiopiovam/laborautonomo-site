@@ -1,17 +1,10 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!doctype HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}{% endblock %} - LaborAutonomo</title>
+        <title>{% block title %}{% endblock %} &raquo; LaborAutonomo</title>
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="/">{{'Início'|trans}}</a></li>
-                <li><a href="/contact">{{'Contato'|trans}}</a></li>
-            </ul>
-        </nav>
-
         {% block content %}{% endblock %}
     </body>
 </html>
