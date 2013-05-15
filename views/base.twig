@@ -1,15 +1,44 @@
 <!doctype HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}{% endblock %} &raquo; LaborAutonomo</title>
-        {% block header %}
-        <link rel="stylesheet" href="css/structure.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-        {% endblock %}
+        <title>{% block meta_title %}{{'LaborAutonomo.org - Espaço laboratorial para desenvolvimento web'|trans}}{% endblock %} &raquo; LaborAutonomo</title>        
+        <meta name="keywords" content="{% block meta_keywords %}laborautonomo, php, HTML5, CSS3, backend, freelancer, freela, javascript, framework, open source , {{'software livre'|trans}}, {{'espaço laboratorial'|trans}}, {{'laboratório web'|trans}}, {{'desenvolvimento web'|trans}} {% endblock %}">
+        <meta name="description" content="{% block meta_description %}{{'LaborAutonomo.org - Espaço laboratorial para desenvolvimento web'|trans}}{% endblock %}">
+        <meta name="author" content="LaborAutonomo">
+        <meta name="robots" content="index,follow">
+        <link rel="stylesheet" href="css/structure.css" type="text/css" media="screen"/>
+        {% block head %} {% endblock %}
     </head>
+
     <body>
-        <div id='spine'>
-            {% block content %}{% endblock %}
-        </div>
+        <header>
+            <h1>LaborAutonomo.org</h1>
+            <p>{{'espaço laboratorial para desenvolvimento web'|trans}}</p>
+            <nav>
+                <ul>
+                    <li><a href="/">{{'Início'|trans}}</a></li>
+                    <li><a href="{{'sobre'|trans}}">{{'Sobre'|trans}}</a></li>
+                    <li><a href="{{'projetos'|trans}}">{{'Projetos'|trans}}</a></li>
+                    <li><a href="{{'contato'|trans}}">{{'Contato'|trans}}</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        {% block content %}{% endblock %}
+        
+        <aside>
+            <h3>Links</h3>
+            <ul>
+                <li><a href="http://php.net">php.net</a></li>
+                <li><a href="http://github.com">GitHub</a></li>
+            </ul>
+        </aside>
+        
+        <footer>
+            <span>Copyleft</span>
+            <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">&copy;</span>
+            <span>2013 - Livre para uso e distribuição</span>
+        </footer>
     </body>
 </html>
