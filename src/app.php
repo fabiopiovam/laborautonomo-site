@@ -1,7 +1,6 @@
 <?php 
 $app = require __DIR__.'/bootstrap.php';
 
-//APP DEFINITION
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.twig');
 })
@@ -25,10 +24,36 @@ $app->get($app['translator']->trans('projetos'), function () use ($app) {
 $app->match($app['translator']->trans('contato'), function () use ($app) {
 
     $form = $app['form.factory']->createBuilder('form')
-        ->add('name', 'text', array('label' => $app['translator']->trans('Nome')))
-        ->add('email', 'email', array('label'=>'E-mail'))
-        ->add('site', 'url', array('label'=>'site / blog','required'=>false))
-        ->add('message', 'textarea', array('label' => $app['translator']->trans('Mensagem')))
+        ->add('name', 'text', array(
+            'label' => false, 
+            'attr'  => array(
+                'placeholder' => $app['translator']->trans('Nome')
+                )
+            )
+         )
+        ->add('email', 'email', array(
+            'label' => false, 
+            'attr'  => array(
+                'placeholder' => $app['translator']->trans('E-mail')
+                )
+            )
+         )
+        ->add('site', 'url', array(
+            'label'     => false,
+            'required'  => false,
+            'attr'      => array(
+                'placeholder' => 'Website / Blog (Ex.: http://yoursite.com)'
+                )
+            )
+         )
+        ->add('message', 'textarea', array(
+            'label' => false,
+            'attr'  => array(
+                'placeholder'   => $app['translator']->trans('Mensagem'),
+                'rows'          => '5',
+                )
+            )
+         )
         ->getForm();
         
     $request = $app['request'];
@@ -36,20 +61,19 @@ $app->match($app['translator']->trans('contato'), function () use ($app) {
         $form->bind($request);
 
         if ($form->isValid()) {
-            $data = $form->getData();
-
+            $data = array_merge($form->getData(), $_SERVER);
             try{
                 $message = \Swift_Message::newInstance()
-                ->setSubject(sprintf('Contato por %s', $_SERVER['SERVER_NAME']))
+                ->setSubject(sprintf('Contato por %s', $data['SERVER_NAME']))
                 ->setFrom(array($data['email']))
-                ->setTo(array('fabio@laborautonomo.org'))
-                ->setBody($data['message']);
+                ->setTo($app['mail.to'])
+                ->setBody($app['twig']->render('contact.message.twig', $data), 'text/html');
     
                 $app['mailer']->send($message);
             }
             catch(Exception $e){
-                $app['monolog']->addError(sprintf('%s Error on %s : %s', $e->getCode(), $app['request']->server->get('REQUEST_URI'), $e->getMessage()));
-                $app['session']->getFlashBag()->add('error', $app['translator']->trans('Ops! Houve uma falha na entrega de sua mensagem. Por favor, tente novamente.'));
+                $app['monolog']->addError(sprintf('%s Error on %s : %s', $e->getCode(), $data['REQUEST_URI'], $e->getMessage()));
+                $app['session']->getFlashBag()->add('error', $app['translator']->trans('Ops! Falha no envio da mensagem. Por favor, tente novamente.'));
                 return $app->redirect($app['url_generator']->generate('contact'));
             }            
             

@@ -1,0 +1,12 @@
+<html>
+    <head> </head>
+    <body>
+        <p><strong>{{ name|raw }} (<a href="mailto:{{ email }}">{{ email }}</a>) says:</strong></p>
+        <p>{{ message|raw }}</p>
+        
+        {% if site %} <p>{{ site }}</p> {% endif %}
+        
+        <hr>
+        <p><small>Sent from <a href="http://{{ HTTP_HOST }}">http://{{ HTTP_HOST }}</a> by {{ HTTP_USER_AGENT }}.</small></p>
+    </body>
+</html>

@@ -18,6 +18,7 @@ $app['translator.locales']  = array('pt_BR','en','es');
 $app['translator.path']     = __DIR__ . '/../locales';
 $app['cache.path']          = __DIR__ . '/../cache';
 $app['cache.max_age']       = $app['cache.expires'] = 3600 * 24 * 90;
+$app['mail.to']             = array('fabio@laborautonomo.org' => 'Fabio - LaborAutonomo.org');
 $app['smtp.options']        = (file_exists(__DIR__.'/../etc/swiftmailer.options.php')) ? require_once __DIR__.'/../etc/swiftmailer.options.php' : array(
     'host' => 'mail.your-domain.com',
     'port' => '587',

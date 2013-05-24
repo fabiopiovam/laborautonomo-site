@@ -3,15 +3,9 @@
 {% block content %}
 <header><h1>{{'Contato'|trans}}</h1></header>
 
-{% for type, flashMessage in app.session.flashbag.all() %}
-<div class="flash-{{ type }}">
-    <p>{{ flashMessage[0] }}</p>
-</div>
-{% endfor %}
-
 <form action="#" method="post">
     {{ form_widget(form) }}
 
-    <input type="submit" name="submit" />
+    <button type="submit">{{'Enviar mensagem'|trans}}</button>
 </form>
 {% endblock %}

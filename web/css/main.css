@@ -55,6 +55,41 @@ textarea {
     padding: 0.2em 0;
 }
 
+.main-article form{
+    line-height: 40px;
+}
+
+.main-article form input, 
+.main-article form textarea{
+    width:80%;
+}
+
+.main-article form button{
+    font-size:14px;
+    height:35px;
+}
+
+.flash-message {
+    background: #1F1F1F;
+    background: rgba(0,0,0,.9);
+    padding: 1px 12px;
+    border-radius: 15px;
+    color: #FFF;
+    text-shadow: -1px -1px 0 rgba(0,0,0,.5);
+    font-size: 15px;
+    -webkit-box-shadow: 0 5px 10px #aaa;   
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
+
+}
+.flash-message.error {
+    background: #FE1A00;
+    background: rgba(254,26,0,.85);
+}
+.flash-message.success {
+    background: #5CB811;
+    background: rgba(92,184,17,.85);
+}
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
@@ -138,6 +173,7 @@ nav a:hover {
 .main aside {
     color: white;
     padding: 0px 5% 10px;
+    margin-top:20px;
 }
 
 .footer-container footer {
@@ -196,6 +232,8 @@ nav a:hover {
     nav li:last-child a {
         margin-right: 0;
     }
+    
+    .main aside{ margin-top:20px;}
 
 /* ========================
     INTERMEDIATE: IE Fixes
@@ -218,6 +256,7 @@ nav a:hover {
 
     .header-container,
     .main aside {
+        margin-top:0px;
         -webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
