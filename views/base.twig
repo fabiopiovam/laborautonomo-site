@@ -17,7 +17,8 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+        
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         
         {% block head %} {% endblock %}
@@ -37,7 +38,7 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">LaborAutonomo.org</h1>
+                <h1 class="title"><a href="/" title='homepage'>LaborAutonomo.org</a></h1>
                 <nav>
                     <ul>
                         <li><a href="{{'sobre'|trans}}">{{'Sobre'|trans}}</a></li>
@@ -76,11 +77,6 @@
                 <h3>Copyleft 2013 - Livre para uso e distribuição dos projetos aqui publicados</h3>
             </footer>
         </div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>
-            window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
-        </script>
 
         <script src="js/main.js"></script>
 

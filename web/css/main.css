@@ -69,6 +69,7 @@ textarea {
     height:35px;
 }
 
+/* FHASH MESSAGES */
 .flash-message {
     background: #1F1F1F;
     background: rgba(0,0,0,.9);
@@ -87,7 +88,7 @@ textarea {
     background: rgba(254,26,0,.85);
 }
 .flash-message.success {
-    background: #5CB811;
+    background: #5CB811; /*#8AD03E*/
     background: rgba(92,184,17,.85);
 }
 
@@ -109,22 +110,33 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #8AD03E;
 }
 
-.footer-container,
+.footer-container{
+    border-top: 20px solid #8AD03E;
+}
+
 .main aside {
     border-top: 20px solid #e44d26;
 }
 
 .header-container,
-.footer-container,
+.footer-container{
+    background: #333;
+}
+
 .main aside {
     background: #f16529;
 }
 
 .title {
     color: white;
+}
+
+.title a {
+    color: white;
+    text-decoration: none;
 }
 
 /* ==============
@@ -178,7 +190,7 @@ nav a:hover {
 
 .footer-container footer {
     color: white;
-    padding: 20px 0;
+    padding: 9px 0;
 }
 
 /* ===============
@@ -220,9 +232,28 @@ nav a:hover {
     nav a {
         float: left;
         width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
+        margin: 17px 1.7% 0;
+        padding: 0 2%;
         margin-bottom: 0;
+        
+        -webkit-border-top-left-radius: 8px;
+        -webkit-border-top-right-radius: 8px;
+        -moz-border-radius-topleft: 8px;
+        -moz-border-radius-topright: 8px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    
+    nav a:hover,
+    nav a:visited {
+        color: white;
+        margin: 11px 1.7% 0;
+        padding: 3px 2%;
+    }
+    
+    nav a:hover {
+        text-decoration: none;
+        background-color: #8AD03E;
     }
 
     nav li:first-child a {
@@ -273,6 +304,17 @@ nav a:hover {
     nav {
         float: right;
         width: 38%;
+    }
+    
+    nav a {
+        margin: 43px 1.7% 0;
+        padding: 0 2%;
+    }
+    
+    nav a:hover,
+    nav a:visited {
+        margin: 37px 1.7% 0;
+        padding: 3px 2%;
     }
 
 /* ============
