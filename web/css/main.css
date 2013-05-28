@@ -92,6 +92,29 @@ textarea {
     background: rgba(92,184,17,.85);
 }
 
+.copyleft{
+    -moz-transform: scaleX(-1); 
+    -o-transform: scaleX(-1); 
+    -webkit-transform: scaleX(-1); 
+    transform: scaleX(-1); 
+    display: inline-block;
+}
+
+.main-article .ico{
+    margin: 0 8%;
+    color:#333;
+    min-height: 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding:0 0 0 25px;
+}
+.main-article .ico.github{
+    background-image: url('../img/ico-github.png');
+}
+.main-article .ico.mail{
+    background-image: url('../img/ico-mail.png');
+}
+
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
@@ -100,9 +123,29 @@ body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
+body a{
+    text-decoration: none;
+}
+
 .wrapper {
     width: 90%;
     margin: 0 5%;
+}
+
+.main-article a {
+    color:#0000FF;
+}
+
+.footer-container a {
+    color:#8F64D3;
+}
+
+.footer-container p {
+    margin: 0;
+}
+
+aside a{
+    color:#1A4F1A;
 }
 
 /* ===================

@@ -2,7 +2,8 @@
 $app = require __DIR__.'/bootstrap.php';
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.twig');
+    //return $app['twig']->render('index.twig');
+    return $app['twig']->render('about.twig');
 })
 ->bind('homepage');
 
@@ -12,7 +13,7 @@ $app->get($app['translator']->trans('sobre'), function () use ($app) {
 ->bind('about');
 
 $app->get('blog', function () use ($app) {
-    return $app['twig']->render('about.twig');
+    return $app['twig']->render('blog.twig');
 })
 ->bind('blog');
 

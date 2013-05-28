@@ -28,14 +28,7 @@
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         
-        <!--
-        CORES PARA O SITE
-        VERDE - #00D60A
-        CINZA - #333333
-        LARANJA 1 - #F16529
-        LARANJA 2 - #E44D26    
-        -->
-
+        {# MENU #}
         <div class="header-container">
             <header class="wrapper clearfix">
                 <h1 class="title"><a href="/" title='homepage'>LaborAutonomo.org</a></h1>
@@ -52,6 +45,7 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
                 
+                {# MAIN ARTICLE #}
                 <article class="main-article">
                     {% for type, flashMessage in app.session.flashbag.all() %}
                     <div class="flash-message {{ type }}"> <p>{{ flashMessage[0] }}</p> </div>
@@ -60,10 +54,14 @@
                     {% block content %}{% endblock %}
                 </article>
                 
+                {# ASIDE TO PROJECTS #}
                 <aside>
                     <h3>{{'Projetos'|trans}}</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.
+                        {{'Logo mais publicaremos aqui todos os projetos, testes e experimentos desenvolvidos pelo LaborAutonomo.'|trans}}
+                    </p>
+                    <p>
+                        {{'Por enquanto '|trans}} <a href='http://github.com/laborautonomo' target="_blank">Fork me on GitHub!</a>
                     </p>
                 </aside>
 
@@ -71,10 +69,29 @@
             <!-- #main -->
         </div>
         <!-- #main-container -->
-
+        
+        {# FOOTER #}
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>Copyleft 2013 - Livre para uso e distribuição dos projetos aqui publicados</h3>
+                <p>
+                    
+                    {{"Este site utiliza"|trans}} 
+                    <a href="http://silex.sensiolabs.org/" target='_blank'>Silex Microframework</a>
+                    {{' e '|trans}}
+                    HTML5 <a href='http://html5boilerplate.com/' target='_blank'>Boilerplate</a> responsive template.
+                </p>
+                <small>
+                    Copyleft 
+                    <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
+                    <span class='copyleft'>
+                        &copy;
+                    </span>
+                    <!--[if lte IE 8]></span><![endif]-->
+                    {{ "now"|date("Y") }} &nbsp; - &nbsp;
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/deed.pt_BR" target="_blank"><img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/br/80x15.png" /></a>
+                    &nbsp; - &nbsp; 
+                    {{"O conteúdo e os projetos aqui publicados estão livres para cópia, uso e distribuição."|trans}}
+                </small>
             </footer>
         </div>
 
