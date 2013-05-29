@@ -20,10 +20,12 @@ body {
     text-shadow: none;
 }
 
+/*
 ::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
+*/
 
 hr {
     display: block;
@@ -88,7 +90,7 @@ textarea {
     background: rgba(254,26,0,.85);
 }
 .flash-message.success {
-    background: #5CB811; /*#8AD03E*/
+    background: #5CB811;
     background: rgba(92,184,17,.85);
 }
 
@@ -113,6 +115,22 @@ textarea {
 }
 .main-article .ico.mail{
     background-image: url('../img/ico-mail.png');
+}
+
+.css-validator{
+    border:0;
+    width:75px;
+    height:23px;
+}
+
+.html5-validator{
+    background-image: url('../img/ico-html5.png');
+    width:24px;
+    height:24px;
+    display: inline-block;
+}
+.html5-validator:hover{
+    background-position: left bottom;
 }
 
 /* ===== Initializr Styles ==================================================
@@ -395,7 +413,7 @@ nav a:hover {
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    *text-indent: -9999px;
+    text-indent: -9999px;
 }
 
 .ir:before {
@@ -446,7 +464,7 @@ nav a:hover {
 }
 
 .clearfix {
-    *zoom: 1;
+    /*zoom: 1;*/
 }
 
 /* ==========================================================================
@@ -503,9 +521,9 @@ nav a:hover {
         max-width: 100% !important;
     }
 
-    @page {
+    /*@page {
         margin: 0.5cm;
-    }
+    }*/
 
     p,
     h2,
