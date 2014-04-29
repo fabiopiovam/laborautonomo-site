@@ -164,6 +164,8 @@ body a{
 
 aside a{
     color:#1A4F1A;
+    text-decoration: underline;
+    text-shadow: 1px 0px 1px #C4C4C4;
 }
 
 /* ===================
@@ -180,6 +182,7 @@ aside a{
 
 .main aside {
     border-top: 20px solid #e44d26;
+    display: none;
 }
 
 .header-container,

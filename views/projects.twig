@@ -1,6 +1,34 @@
 {% extends "base.twig" %}
 
+{% block head %}
+<style type="text/css" media="screen">
+	.item-project{
+	    cursor: pointer;
+	    padding:1px 15px;
+	    box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+	    color: #222222;
+	}
+	
+	.item-project:hover{
+        background-color: #F7F7F7;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<header><h1>{{'Projetos'|trans}}</h1></header>
-<p>{{'Site em construção'|trans}}</p>
+<header><h2>{{'Projetos'|trans}}</h2></header>
+
+<hr/>
+{% for obj in projects %}
+    <a href="{{obj.html_url}}" target="_blank" title="{{'ver detalhes'|trans}}">
+        <div class="item-project">
+            <h3>{{ obj.name }}</h3>
+            <p>{{ obj.description }}</p>
+        </div>
+    </a>
+    <hr/>
+{% endfor %}
+
 {% endblock %}

@@ -18,10 +18,7 @@
         <link rel="shortcut icon" href="img/favicon.png" />
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-        
-        <script src="js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        
+              
         {% block head %} {% endblock %}
     </head>
     <body>
@@ -37,9 +34,9 @@
                 <h1 class="title"><a href="/" title='homepage'>LaborAutonomo.org</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="{{'sobre'|trans}}">{{'Sobre'|trans}}</a></li>
+                        <li><a href="/">{{'Início'|trans}}</a></li>
+                        <li><a href="{{'projetos'|trans}}">{{'Projetos'|trans}}</a></li>
                         <li><a href="http://blog.laborautonomo.org">Blog</a></li>
-                        <li><a href="{{'contato'|trans}}">{{'Contato'|trans}}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -63,13 +60,12 @@
                 {# 
                     ######## ASIDE TO PROJECTS ##########
                 #}
-                <aside>
-                    <h3>{{'Projetos'|trans}}</h3>
-                    <p>
+                <aside id="aside-projects">
+                    <h3>{{'Projetos'|trans}}</h3><p>
                         {{'Logo mais publicaremos aqui todos os projetos, testes e experimentos desenvolvidos pelo LaborAutonomo.'|trans}}
                     </p>
                     <p>
-                        {{'Por enquanto '|trans}} <a href='http://github.com/laborautonomo' target="_blank">Fork me on GitHub!</a>
+                        <a href='http://github.com/laborautonomo'>{{'ver detalhes'|trans}}</a> &nbsp; | &nbsp; <a href='http://github.com/laborautonomo'>{{'outros projetos'|trans}}</a>
                     </p>
                 </aside>
 
@@ -114,7 +110,10 @@
                 </small>
             </footer>
         </div>
-
+        
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/main.js"></script>
+        {% block script %}{% endblock %}
     </body>
 </html>

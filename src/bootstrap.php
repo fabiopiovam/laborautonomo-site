@@ -28,6 +28,15 @@ $app['smtp.options']        = (file_exists(__DIR__.'/../etc/swiftmailer.options.
     //'auth_mode' => 'login'
 );
 
+//REPOSITORIES CONFIGURATION
+$app['repos.config'] = array(
+    'storage'   =>  __DIR__ . '/../storage/', //required permission 777
+    'github'    => array(
+        'user'      => 'laborautonomo',
+        'repo'      => 'laborautonomo-site',
+        'version'   => 'v3'
+    )
+);
 
 //I18N
 $app->register(new Silex\Provider\TranslationServiceProvider(), array_flip(array_fill_keys($app['translator.locales'], 'locale_fallback')));
