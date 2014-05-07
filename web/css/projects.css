@@ -1,0 +1,93 @@
+.item-project {
+    color: #222222;
+    cursor: pointer;
+    padding: 1px 15px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.item-project:hover {
+    background-color: #f6f6f6;
+}
+
+.markdown-body h1 {
+    border-bottom: 1px solid #DDDDDD;
+    font-size: 2.5em;
+}
+
+.markdown-body pre {
+    word-wrap: normal;
+}
+
+.markdown-body .highlight pre, .markdown-body pre {
+    background-color: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+}
+
+.markdown-body p, .markdown-body blockquote, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body table, .markdown-body pre {
+    margin: 15px 0;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.7;
+    margin: 0 0 15px;
+    padding: 0;
+    position: relative;
+}
+
+.markdown-body h2 {
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 2em;
+}
+
+tt, code, pre {
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-size: 12px;
+}
+
+.markdown-body pre code, .markdown-body pre tt {
+    background-color: rgba(0, 0, 0, 0);
+    border: medium none;
+    display: inline;
+    line-height: inherit;
+    margin: 0;
+    max-width: initial;
+    overflow: initial;
+    padding: 0;
+    word-wrap: normal;
+}
+
+.markdown-body pre > code {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+}
+
+.markdown-body code, .markdown-body tt {
+    background-color: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+.markdown-body h5 {
+    font-size: 1em;
+}
+
+.markdown-body h3 {
+    font-size: 1.5em;
+}

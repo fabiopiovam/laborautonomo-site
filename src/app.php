@@ -4,12 +4,6 @@ $app = require __DIR__.'/bootstrap.php';
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-$app->get($app['translator']->trans('projetos'), function () use ($app) {
-    $subRequest = Request::create('/api/projects', 'GET');
-    return $app->handle($subRequest, HttpKernelInterface::SUB_REQUEST);
-})
-->bind('projects');
-
 $app->match('/', function () use ($app) {
 
     $form = $app['form.factory']->createBuilder('form')
@@ -75,6 +69,6 @@ $app->match('/', function () use ($app) {
 })
 ->bind('homepage');
 
-$app->mount('/api', include 'api.php');
+$app->mount('projects', include 'api.php');
 
 return $app;

@@ -15,9 +15,9 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="shortcut icon" href="img/favicon.png" />
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" href="/img/favicon.png" />
+        <link rel="stylesheet" href="/css/normalize.min.css">
+        <link rel="stylesheet" href="/css/main.css">
               
         {% block head %} {% endblock %}
     </head>
@@ -35,7 +35,7 @@
                 <nav>
                     <ul>
                         <li><a href="/">{{'Início'|trans}}</a></li>
-                        <li><a href="{{'projetos'|trans}}">{{'Projetos'|trans}}</a></li>
+                        <li><a href="/projects">{{'Projetos'|trans}}</a></li>
                         <li><a href="http://blog.laborautonomo.org">Blog</a></li>
                     </ul>
                 </nav>
@@ -111,9 +111,9 @@
             </footer>
         </div>
         
-        <script src="js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="/js/main.js"></script>
         {% block script %}{% endblock %}
     </body>
 </html>

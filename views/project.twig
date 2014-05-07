@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/projects.css" type="text/css" charset="utf-8"/>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" charset="utf-8">
+	$('.markdown-body a').attr('target','_blank');
+</script>
+{% endblock %}
+
+{% block content %}
+
+{{ readme_html|raw }}
+
+{% endblock %}

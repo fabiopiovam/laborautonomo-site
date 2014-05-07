@@ -3,13 +3,13 @@
 {% block script %}
 <script type="text/javascript" charset="utf-8">
     $.ajax({
-        url         : '/api/get-repositories',
+        url         : '/projects/get-repositories',
         dataType    : 'json',
         success     : function(data) {
             obj = data[Math.floor((Math.random()*data.length-1)+1)];
-            console.log(obj);
+            
             html = "<h3>" + obj.name + "</h3> <p>" + obj.description + "</p>";
-            html +="<p><a href='" + obj.html_url + "' target='_blank'>{{'ver detalhes'|trans}}</a> &nbsp; | &nbsp; <a href='{{'projetos'|trans}}'>{{'outros projetos'|trans}}</a></p>";
+            html +="<p><a href='/projects/" + obj.name + "'>{{'ver detalhes'|trans}}</a> &nbsp; | &nbsp; <a href='/projects'>{{'outros projetos'|trans}}</a></p>";
             
             $("#aside-projects").html(html);
         },
