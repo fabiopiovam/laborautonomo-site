@@ -8,7 +8,7 @@ $app = new Silex\Application();
 
 
 //SETTINGS
-$app['debug']               = (preg_match("/192\.168\.[0-9]{1,3}\.[0-9]{1,3}/", $_SERVER['SERVER_ADDR']) 
+$app['debug']               = isset($_SERVER['SERVER_ADDR']) && (preg_match("/192\.168\.[0-9]{1,3}\.[0-9]{1,3}/", $_SERVER['SERVER_ADDR']) 
                                 || $_SERVER['SERVER_ADDR'] == "127.0.0.1");
 date_default_timezone_set('America/Sao_Paulo');
 ini_set('display_errors', $app['debug']);

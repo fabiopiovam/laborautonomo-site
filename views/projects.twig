@@ -5,17 +5,18 @@
 {% endblock %}
 
 {% block content %}
-<header><h2>{{'Projetos'|trans}}</h2></header>
-
-<hr/>
-{% for obj in projects %}
-    <a href="/projects/{{ obj.name }}" title="{{'ver detalhes'|trans}}">
-        <div class="item-project">
-            <h3>{{ obj.name }}</h3>
-            <p>{{ obj.description }}</p>
-        </div>
-    </a>
+<article class="main-article">
+    <header><h2>{{'Projetos'|trans}}</h2></header>
+    
     <hr/>
-{% endfor %}
-
+    {% for obj in projects %}
+        <a href="/projects/{{ obj.name }}" title="{{'ver detalhes'|trans}}">
+            <div class="item-project">
+                <h3>{{ obj.name }}</h3>
+                <p>{{ obj.description }}</p>
+            </div>
+        </a>
+        <hr/>
+    {% endfor %}
+</article>
 {% endblock %}

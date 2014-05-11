@@ -91,3 +91,45 @@ tt, code, pre {
 .markdown-body h3 {
     font-size: 1.5em;
 }
+
+aside.project-data {
+    background-color: #F1F1F1;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    font-family: my-sans-serif, Arial, sans-serif;
+    margin-top: 10px;
+    padding: 15px;
+    color: #626262;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    font-size: 0.8em;
+}
+
+aside.project-data a {
+    color: #777777;
+    text-shadow: none;
+}
+
+aside.project-data p {
+    margin: 0;
+}
+
+aside.project-data h1, aside.project-data h2, aside.project-data h3, aside.project-data h4, aside.project-data h5 {
+    color: #4353CD;
+    margin: 3px 0;
+}
+
+aside.project-data hr {
+    border-color: #E9E9E9;
+}
+
+.version-note p {
+    color: #858585;
+    font-family: my-sans-serif, Arial, sans-serif;
+    font-size: 0.9em;
+    line-height: 15px;
+}

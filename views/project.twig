@@ -11,7 +11,47 @@
 {% endblock %}
 
 {% block content %}
+<article class="main-article">
+    {{ readme_html|raw }}
+</article>
 
-{{ readme_html|raw }}
-
+<aside class="project-data">
+    {% if details.homepage %}
+        <h3>{{'Demonstração'|trans}}</h3>
+        <a href="{{ details.homepage }}" target="_blank">{{'visite este projeto'|trans}}</a>
+        <hr/>
+    {% endif %}
+    
+    <h3>{{'Código-fonte'|trans}}</h3>
+    <p>
+        {{'Acesse o repositório'|trans}}
+        <a href="{{ details.html_url }}" target="_blank"> {{'clique aqui'|trans}} </a>
+    </p>
+    
+    {% if langs %}
+        <hr/>
+        
+        <h3>{{'Linguagens'|trans}}</h3>
+        <p>
+            {% for lang,number in langs %}
+                <a href="#" title="conheça outros projetos que utilizam {{lang}}">{{lang}}</a> &nbsp; 
+            {% endfor %}
+        </p>
+    {% endif %}
+    
+    {% if releases %}
+        <hr/>
+        
+        <h3>{{'Releases'|trans}}</h3>
+        
+        {% for release in releases %}
+            <div class="version-note">
+                <strong>{{release.tag_name}}</strong>
+                <p>{{release.name}} <a href="{{release.html_url}}" target="_blank" title="{{'leia mais detalhes da versão'|trans}}">{{'detalhes'|trans}}</a></p>
+                <a href="{{release.zipball_url}}" title="{{'download desta versão no formato'|trans}} .zip">zip</a> | 
+                <a href="{{release.tarball_url}}" title="{{'download desta versão no formato'|trans}} .tar.gz">tar.gz</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+</aside>
 {% endblock %}

@@ -1,7 +1,15 @@
 {% extends "base.twig" %}
 
+{% block head %}
+<style type="text/css" media="screen">
+	.main aside {
+        display: none;
+    }
+</style>
+{% endblock %}
+
 {% block script %}
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
     $.ajax({
         url         : '/projects/get-repositories',
         dataType    : 'json',
@@ -21,25 +29,40 @@
 {% endblock %}
 
 {% block content %}
-<header><h2>{{'Sobre'|trans}}</h2></header>
-<p>
-    {{'Espaço laboratorial para desenvolvimento de aplicações e websites, utilizando prioritariamente soluções codigo-aberto.'|trans}}
-</p>
-
-<header><h2>{{'Repositórios'|trans}}</h2></header>
-<p>
-    <a class='ico github' href='http://github.com/laborautonomo' target='_blank' title="{{'Repositórios'|trans}}">GitHub</a>
-</p>
-
-<header><h2>{{'Contato'|trans}}</h2></header>
-
-<form action="#" method="post">
+<article class="main-article">
+    {% for type, flashMessage in app.session.flashbag.all() %}
+    <div class="flash-message {{ type }}"> <p>{{ flashMessage[0] }}</p> </div>
+    {% endfor %}
     
-    {{ form_widget(form) }}
+    <header><h2>{{'Sobre'|trans}}</h2></header>
+    <p>
+        {{'Espaço laboratorial para desenvolvimento de aplicações e websites, utilizando prioritariamente soluções codigo-aberto.'|trans}}
+    </p>
     
-    <button type="submit">{{'Enviar mensagem'|trans}}</button>  
-</form>
+    <header><h2>{{'Repositórios'|trans}}</h2></header>
+    <p>
+        <a class='ico github' href='http://github.com/laborautonomo' target='_blank' title="{{'Repositórios'|trans}}">GitHub</a>
+    </p>
+    
+    <header><h2>{{'Contato'|trans}}</h2></header>
+    
+    <form action="#" method="post">
+        
+        {{ form_widget(form) }}
+        
+        <button type="submit">{{'Enviar mensagem'|trans}}</button>  
+    </form>
+    
+    <p>{{'ou através do e-mail'|trans}}:</p>
+    <a class='ico mail' href='mailto:fabio@laborautonomo.org'>fabio@laborautonomo.org</a>
+</article>
 
-<p>{{'ou através do e-mail'|trans}}:</p>
-<a class='ico mail' href='mailto:fabio@laborautonomo.org'>fabio@laborautonomo.org</a>
+<aside id="aside-projects">
+    <h3>{{'Projetos'|trans}}</h3><p>
+        {{'Logo mais publicaremos aqui todos os projetos, testes e experimentos desenvolvidos pelo LaborAutonomo.'|trans}}
+    </p>
+    <p>
+        <a href='http://github.com/laborautonomo'>{{'ver detalhes'|trans}}</a> &nbsp; | &nbsp; <a href='http://github.com/laborautonomo'>{{'outros projetos'|trans}}</a>
+    </p>
+</aside>
 {% endblock %}

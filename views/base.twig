@@ -44,31 +44,7 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-                
-                {# 
-                    ######## MAIN ARTICLE ##########
-                #}
-                <article class="main-article">
-                    {% for type, flashMessage in app.session.flashbag.all() %}
-                    <div class="flash-message {{ type }}"> <p>{{ flashMessage[0] }}</p> </div>
-                    {% endfor %}
-                    
-                    {% block content %}{% endblock %}
-                </article>
-                
-                
-                {# 
-                    ######## ASIDE TO PROJECTS ##########
-                #}
-                <aside id="aside-projects">
-                    <h3>{{'Projetos'|trans}}</h3><p>
-                        {{'Logo mais publicaremos aqui todos os projetos, testes e experimentos desenvolvidos pelo LaborAutonomo.'|trans}}
-                    </p>
-                    <p>
-                        <a href='http://github.com/laborautonomo'>{{'ver detalhes'|trans}}</a> &nbsp; | &nbsp; <a href='http://github.com/laborautonomo'>{{'outros projetos'|trans}}</a>
-                    </p>
-                </aside>
-
+                {% block content %}{% endblock %}
             </div>
             <!-- #main -->
         </div>
