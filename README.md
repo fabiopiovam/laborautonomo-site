@@ -6,7 +6,7 @@ This is a open source website/portfolio developed in Silex Micro-framework PHP w
 Using
 -----
 * [PHP >= 5.3](https://php.net)
-* [Siles Micro-framework](http://silex.sensiolabs.org/)
+* [Silex Micro-framework](http://silex.sensiolabs.org/)
 * [html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
 * [GitHub API](https://developer.github.com/v3/)
 
