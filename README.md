@@ -26,3 +26,9 @@ Installation / Usage
 4. Configure file `src/bootstrap.php`
 
 5. Write permission to "storage" directory
+
+### Updating project's page
+The project's page is generated based in GitHub's readme. When you make first run of a project page, the html is generated. But, to update this generated file, call `src/cron-data-updates.php` file using task Cron (as a suggestion). 
+Verify the necessary frequency (we call once a week).
+
+This script also updates the releases of projects.
