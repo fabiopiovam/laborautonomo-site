@@ -6,7 +6,15 @@
 
 {% block content %}
 <article class="main-article">
-    <header><h2>{{'Projetos'|trans}}</h2></header>
+    <header class="projects">
+        <h2>
+            {% if param is defined %}
+                <a href="/projects" title="{{'ver todos os projetos'|trans}}">{{'Projetos'|trans}}</a> / {{param}}
+            {% else %}
+                {{'Projetos'|trans}}
+            {% endif %}
+        </h2>
+    </header>
     
     <hr/>
     {% for obj in projects %}
@@ -19,4 +27,10 @@
         <hr/>
     {% endfor %}
 </article>
+
+<aside class="project-tags">
+    {% for lang in languages %}
+        {{ lang|raw }} 
+    {% endfor %}
+</aside>
 {% endblock %}

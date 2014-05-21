@@ -378,3 +378,35 @@ aside.project-data hr {
     font-size: 0.9em;
     line-height: 15px;
 }
+
+aside.project-tags {
+    background-color: #FAFAFA;
+    border: 1px solid #F6F6F6;
+    border-radius: 5px;
+    font-family: my-sans-serif, Arial, sans-serif;
+    margin-top: 30px;
+    padding: 15px;
+    color: #626262;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    font-size: 0.8em;
+    line-height: 40px;
+}
+
+aside.project-tags a{
+    color: #4183C4!important;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+header.projects a {
+    color: #8D8D8D;
+}
+
+header.projects a:hover {
+    color: #555;
+}

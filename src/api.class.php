@@ -57,7 +57,12 @@ class Repositories {
                 $return = true;
                 
                 foreach ($criteria as $k => $v) {
-                    $return = ($obj[$k] == $v);
+                    if(is_array($v)) {
+                        $return = (in_array($obj[$k], $v));
+                    }
+                    else {
+                        $return = ($obj[$k] == $v);
+                    }
                 }
                 
                 return $return;
@@ -80,20 +85,27 @@ class Repositories {
         unset($dir);
     }
     
-    public function get_languages($criteria) {
+    public function get_languages($criteria = array()) {
         if (file_exists($this->repos_languages)) 
             $repos = file_get_contents($this->repos_languages);
         else
             $repos = $this->mount_languages_file(true);
         
         $repos = json_decode($repos,true);
+        $repos = $repos[0]['projects'];
         
         if($criteria) {
             $repos = array_filter($repos, function($obj) use ($criteria){
                 $return = true;
                 
                 foreach ($criteria as $k => $v) {
-                    $return = ($obj[$k] == $v);
+                    if(is_array($obj[$k])) {
+                        $arr = array_map('strtolower', array_keys($obj[$k]));
+                        $return = (in_array(strtolower($v),$arr));
+                    }
+                    else {
+                        $return = ($obj[$k] == $v);
+                    }
                 }
                 
                 return $return;
@@ -103,17 +115,71 @@ class Repositories {
         return array_values($repos);
     }
     
-    public function mount_languages_file($return_json=false) {
-            
-        $json_langs = '[';
-        $repos = json_decode($this->get_repositories(array('fork' => false)),true);
+    public function get_languages_total() {
+        if (file_exists($this->repos_languages)) 
+            $langs = file_get_contents($this->repos_languages);
+        else
+            $langs = $this->mount_languages_file(true);
         
-        foreach ($repos as $key => $repo) {
-            $json_langs .= '{"name":"' . $repo["name"] . '",';
-            $json_langs .= '"languages":' . $this->_get_json($this->repos_url . $repo["name"] . '/languages') . '},';
+        $langs = json_decode($langs,true);
+        
+        return $langs[1]['total'];
+    }
+    
+    
+    
+    public function get_languages_cloud() {
+        $arr    = $this->get_languages_total();
+        
+        $min    = min($arr);
+        $max    = max($arr);
+        $tags   = array();
+        
+        $smallest   = 12;
+        $largest    = 26;
+        $unit       = 'pt';
+        
+        $spread = $max - $min;
+        if ( $spread <= 0 )
+            $spread = 1;
+        
+        $font_spread = $largest - $smallest;
+        if ( $font_spread < 0 )
+            $font_spread = 1;
+        
+        $font_step = $font_spread / $spread;
+        
+        foreach ($arr as $lang => $num) {
+            $tags[] = "<a href='/projects/q/language/{$lang}' title='" . $this->_app['translator']->trans('projetos que utilizam') . " {$lang}' style='font-size:" . 
+                str_replace( ',', '.', number_format(($smallest + ( ($num - $min ) * $font_step ) ), 1) ) . 
+                "$unit;'>$lang</a> &nbsp; &nbsp; ";
         }
         
-        $json_langs = substr($json_langs, 0, -1) . ']'; 
+        shuffle($tags);
+        
+        return $tags;
+    }
+    
+    public function mount_languages_file($return_json=false) {
+            
+        $json_langs = '[{"projects":[';
+        $repos      = json_decode($this->get_repositories(array('fork' => false)),true);
+        $total      = array();
+        
+        foreach ($repos as $key => $repo) {
+            $data       = $this->_get_json($this->repos_url . $repo["name"] . '/languages');
+            $json_langs .= '{"name":"' . $repo["name"] . '",';
+            $json_langs .= '"languages":' . $data . '},';
+            
+            $arr_data = json_decode($data,true);
+            foreach ($arr_data as $lang => $num) {
+                if(!isset($total[$lang])) $total[$lang] = 0;
+                $total[$lang] += $num;
+            }
+        }
+        
+        $json_langs = substr($json_langs, 0, -1) . ']},';
+        $json_langs .= '{"total":' . json_encode($total) . '}]';
         
         file_put_contents($this->repos_languages, $json_langs);
         

@@ -34,7 +34,7 @@
         <h3>{{'Linguagens'|trans}}</h3>
         <p>
             {% for lang,number in langs %}
-                <a href="#" title="conheça outros projetos que utilizam {{lang}}">{{lang}}</a> &nbsp; 
+                <a href="/projects/q/language/{{lang}}" title="conheça outros projetos que utilizam {{lang}}">{{lang}}</a> &nbsp; 
             {% endfor %}
         </p>
     {% endif %}
