@@ -44,6 +44,12 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
+                <aside class="select-lang">
+                    <div class="lang pt_BR" title="{{'Português'|trans}}" alt="pt-BR"><a href="/lang/pt_BR">pt-BR</a></div>
+                    <div class="lang en" title="{{'Inglês'|trans}}" alt="en"><a href="/lang/en">en</a></div>
+                    <div class="lang es" title="{{'Espanhol'|trans}}" alt="es"><a href="/lang/es">es</a></div>
+                </aside>
+                
                 {% block content %}{% endblock %}
             </div>
             <!-- #main -->
@@ -58,9 +64,9 @@
             <footer class="wrapper">
                 <p>
                     
-                    {{"Este site utiliza"|trans}} 
+                    {{'Este site utiliza'|trans}} 
                     <a href="http://silex.sensiolabs.org/" target='_blank'>Silex Microframework</a>
-                    {{' e '|trans}}
+                    {{'e'|trans}} 
                     HTML5 <a href='http://html5boilerplate.com/' target='_blank'>Boilerplate</a> responsive template.
                     
                     &nbsp;&nbsp;&nbsp;
@@ -82,7 +88,7 @@
                     &nbsp; - &nbsp;
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/deed.pt_BR" target="_blank"><img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/br/80x15.png" /></a>
                     &nbsp; - &nbsp; 
-                    {{"O conteúdo e os projetos aqui publicados estão livres para cópia, uso e distribuição."|trans}}
+                    {{'O conteúdo e os projetos aqui publicados estão livres para cópia, uso e distribuição.'|trans}}
                 </small>
             </footer>
         </div>

@@ -14,7 +14,7 @@ date_default_timezone_set('America/Sao_Paulo');
 ini_set('display_errors', $app['debug']);
 error_reporting(E_ALL ^ E_NOTICE);
 $app['twig.content_path']   = __DIR__.'/../views';
-$app['translator.locales']  = array('pt_BR','en','es');
+$app['translator.locales']  = array('es','en');
 $app['translator.path']     = __DIR__ . '/../locales';
 $app['cache.path']          = __DIR__ . '/../cache';
 $app['cache.max_age']       = $app['cache.expires'] = 3600 * 24 * 90;
@@ -38,16 +38,29 @@ $app['repos.config'] = array(
     )
 );
 
+
+//Registers Symfony Session component extension
+$app->register(new Silex\Provider\SessionServiceProvider());
+$app['session']->start();
+
+
 //I18N
-$app->register(new Silex\Provider\TranslationServiceProvider(), array_flip(array_fill_keys($app['translator.locales'], 'locale_fallback')));
+$http_accept_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+if ($app['session']->has('user-locale'))
+    $app['locale'] = $app['session']->get('user-locale');
+else
+    $app['locale'] = in_array($http_accept_language, $app['translator.locales']) ? $http_accept_language : 'pt_BR';
+
+$app->register(new Silex\Provider\TranslationServiceProvider(), array('locale_fallbacks' => array('pt_BR')));
 $app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
+    $translator->addLoader('xliff', new Symfony\Component\Translation\Loader\XliffFileLoader());
+    
     foreach ($app['translator.locales'] as $value) {
         $translator->addResource('xliff', "{$app['translator.path']}/{$value}.xlf", $value);
     }
     
     return $translator;
 }));
-$app['translator']->setLocale('pt_BR');
 
 
 //FORM
@@ -82,11 +95,6 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 
-//Registers Symfony Session component extension
-$app->register(new Silex\Provider\SessionServiceProvider());
-$app['session']->start();
-
-
 //REGISTER ERROR HANDLERS
 if(!$app['debug']){
     $app->error(function (\Exception $e, $code) use ($app) {
@@ -103,6 +111,5 @@ if(!$app['debug']){
         return $app['twig']->render('error.twig', array('code' => $code, 'message' => $message,));
     });
 }
-
 
 return $app;

@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 $app->match('/', function () use ($app) {
-
+    
     $form = $app['form.factory']->createBuilder('form')
         ->add('name', 'text', array(
             'label' => false, 
@@ -68,6 +68,12 @@ $app->match('/', function () use ($app) {
     return $app['twig']->render('index.twig', array('form' => $form->createView()));
 })
 ->bind('homepage');
+
+$app->get('/lang/{lang}', function ($lang) use ($app) {
+    $app['session']->set('user-locale', $lang);
+    
+    return ($_SERVER['HTTP_REFERER']) ? $app->redirect($_SERVER['HTTP_REFERER']) : $app->redirect('/');
+});
 
 $app->mount('projects', include 'api.php');
 

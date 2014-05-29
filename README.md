@@ -9,6 +9,8 @@ Using
 * [Silex Micro-framework](http://silex.sensiolabs.org/)
 * [html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
 * [GitHub API](https://developer.github.com/v3/)
+* xliff-file-generator
+* [Virtaal translate](https://github.com/translate/virtaal)
 
 Installation / Usage
 --------------------

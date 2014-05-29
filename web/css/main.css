@@ -256,6 +256,47 @@ nav a:hover {
     padding: 9px 0;
 }
 
+header h2 {
+    margin:0;
+}
+
+aside.select-lang {
+    position:absolute;
+    right:25px;
+    top:10px;
+    box-shadow: none!important;
+    margin: 0;
+    padding: 0;
+    width: auto!important;
+    border: 0;
+    background: none;
+    z-index: 10;
+}
+
+aside.select-lang .lang {
+    float:left;
+    width:16px;
+    height:12px;
+    text-indent: -9999px;
+    margin: 0 10px;
+}
+
+aside.select-lang .lang a {
+    float:left;
+    width:100%;
+    line-height: 12px;
+}
+
+aside.select-lang .lang.pt_BR {
+    background: url('../img/locales/pt_BR.png');
+}
+aside.select-lang .lang.en {
+    background: url('../img/locales/en.png');
+}
+aside.select-lang .lang.es {
+    background: url('../img/locales/es.png');
+}
+
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -328,6 +369,14 @@ nav a:hover {
     }
     
     .main aside{ margin-top:20px;}
+    
+    aside.select-lang {
+        top: 40px;
+    }
+    
+    header h2 {
+        margin:0.83em 0;
+    }
 
 /* ========================
     INTERMEDIATE: IE Fixes
@@ -397,6 +446,22 @@ nav a:hover {
     .main article article {
         float: left;
         width: 100%;
+    }
+    
+    header h2 {
+        margin:0;
+    }
+    
+    .main #aside-projects {
+        margin-top: 20px;
+    }
+    
+    aside.select-lang {
+        margin: 0 0 0 10%;
+        position:relative;
+        right: 0;
+        top: 0;
+        float: right;
     }
 }
 
@@ -472,6 +537,7 @@ nav a:hover {
 
 .clearfix {
     /*zoom: 1;*/
+   position: relative;
 }
 
 /* ==========================================================================

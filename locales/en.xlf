@@ -1,15 +1,159 @@
-<?xml version="1.0"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="file.ext">
-        <body>
-            <trans-unit id="0">
-                <source>Site em construção</source>
-                <target>Site under construction</target>
-            </trans-unit>
-            <trans-unit id="1">
-                <source>Por favor, aguardem...</source>
-                <target>Please wait...</target>
-            </trans-unit>
-        </body>
-    </file>
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pt-BR" datatype="plaintext" original="file.ext" target-language="en">
+    <body>
+      <trans-unit id="0" approved="yes">
+        <source>ver detalhes</source> <target state="translated">view details</target> </trans-unit>
+      <trans-unit id="1" approved="yes">
+        <source>outros projetos</source>
+        <target state="translated">other projects</target>
+      </trans-unit>
+      <trans-unit id="2" approved="yes">
+        <source>Sobre</source>
+        <target state="translated">About</target>
+      </trans-unit>
+      <trans-unit id="3" approved="yes">
+        <source>Espaço laboratorial para desenvolvimento de aplicações e websites, utilizando prioritariamente soluções codigo-aberto.</source>
+        <target state="translated">Laboratory space for developing applications and websites using primarily open source solutions.</target>
+      </trans-unit>
+      <trans-unit id="4" approved="yes">
+        <source>Repositórios</source>
+        <target state="translated">Repositories</target>
+      </trans-unit>
+      <trans-unit id="5" approved="yes">
+        <source>Contato</source>
+        <target state="translated">Contact</target>
+      </trans-unit>
+      <trans-unit id="6" approved="yes">
+        <source>Enviar mensagem</source>
+        <target state="translated">Send message</target>
+      </trans-unit>
+      <trans-unit id="7" approved="yes">
+        <source>ou através do e-mail</source> <target state="translated">or by e-mail</target> </trans-unit>
+      <trans-unit id="8" approved="yes">
+        <source>Projetos</source>
+        <target state="translated">Projects</target>
+      </trans-unit>
+      <trans-unit id="9" approved="yes">
+        <source>Logo mais publicaremos aqui todos os projetos, testes e experimentos desenvolvidos pelo LaborAutonomo.</source> <target state="translated">Very soon we will publish here all the projects, tests and experiments developed by LaborAutonomo.</target> </trans-unit>
+      <trans-unit id="10" approved="yes">
+        <source>Demonstração</source>
+        <target state="translated">Demo</target>
+      </trans-unit>
+      <trans-unit id="11" approved="yes">
+        <source>visite este projeto</source>
+        <target state="translated">visit this project</target>
+      </trans-unit>
+      <trans-unit id="12" approved="yes">
+        <source>Código-fonte</source> <target state="translated">Source</target> </trans-unit>
+      <trans-unit id="13" approved="yes">
+        <source>Acesse o repositório</source> <target state="translated">Access the repository</target> </trans-unit>
+      <trans-unit id="14" approved="yes">
+        <source>clique aqui</source>
+        <target state="translated">click here</target>
+      </trans-unit>
+      <trans-unit id="15" approved="yes">
+        <source>Linguagens</source>
+        <target state="translated">Languages</target>
+      </trans-unit>
+      <trans-unit id="16" approved="yes">
+        <source>Releases</source>
+        <target state="translated">Releases</target>
+      </trans-unit>
+      <trans-unit id="17" approved="yes">
+        <source>leia mais detalhes da versão</source>
+        <target state="translated">details of version</target>
+      </trans-unit>
+      <trans-unit id="18" approved="yes">
+        <source>detalhes</source>
+        <target state="translated">details</target>
+      </trans-unit>
+      <trans-unit id="19" approved="yes">
+        <source>download desta versão no formato</source>
+        <target state="translated">download this version in</target>
+      </trans-unit>
+      <trans-unit id="20" approved="yes">
+        <source>ver todos os projetos</source>
+        <target state="translated">view all projects</target>
+      </trans-unit>
+      <trans-unit id="21" approved="yes">
+        <source>LaborAutonomo.org - Espaço laboratorial para desenvolvimento web</source>
+        <target state="translated">LaborAutonomo.org - Laboratory space for web development</target>
+      </trans-unit>
+      <trans-unit id="22" approved="yes">
+        <source>software livre</source>
+        <target state="translated">free software</target>
+      </trans-unit>
+      <trans-unit id="23" approved="yes">
+        <source>espaço laboratorial</source>
+        <target state="translated">laboratory space</target>
+      </trans-unit>
+      <trans-unit id="24" approved="yes">
+        <source>laboratório web</source>
+        <target state="translated">laboratory web</target>
+      </trans-unit>
+      <trans-unit id="25" approved="yes">
+        <source>desenvolvimento web</source>
+        <target state="translated">web development</target>
+      </trans-unit>
+      <trans-unit id="26" approved="yes">
+        <source>Início</source>
+        <target state="translated">Home</target>
+      </trans-unit>
+      <trans-unit id="27" approved="yes">
+        <source>e</source>
+        <target state="translated">and</target>
+      </trans-unit>
+      <trans-unit id="28" approved="yes">
+        <source>HTML5 válido!</source>
+        <target state="translated">HTML5 valid!</target>
+      </trans-unit>
+      <trans-unit id="29" approved="yes">
+        <source>CSS válido!</source>
+        <target state="translated">CSS valid!</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>foo</source> <target/> </trans-unit>
+      <trans-unit id="31">
+        <source>key1', array(), null, 'ru</source> <target/> </trans-unit>
+      <trans-unit id="32">
+        <source>key_only_english', array(), null, 'ru</source> <target/> </trans-unit>
+      <trans-unit id="33">
+        <source>key1</source> <target/> </trans-unit>
+      <trans-unit id="34">
+        <source>bar</source> <target/> </trans-unit>
+      <trans-unit id="35">
+        <source>foo', array(), 'resources</source> <target/> </trans-unit>
+      <trans-unit id="36">
+        <source>non-existent</source> <target/> </trans-unit>
+      <trans-unit id="37" approved="yes">
+        <source>nome</source>
+        <target state="translated">name</target>
+      </trans-unit>
+      <trans-unit id="38" approved="yes">
+        <source>e-mail</source>
+        <target state="translated">e-mail</target>
+      </trans-unit>
+      <trans-unit id="39" approved="yes">
+        <source>mensagem</source>
+        <target state="translated">message</target>
+      </trans-unit>
+      <trans-unit id="40" approved="yes">
+        <source>Ops! Falha no envio da mensagem. Por favor, tente novamente.</source>
+        <target state="translated">Oops! Failed to send message. Please try again.</target>
+      </trans-unit>
+      <trans-unit id="41" approved="yes">
+        <source>Sua mensagem foi enviada com sucesso! Obrigado :)</source>
+        <target state="translated">Your message was successfully sent! Thank you :)</target>
+      </trans-unit>
+      <trans-unit id="42" approved="yes">
+        <source>projetos que utilizam</source> <target state="translated">view projects that use</target> </trans-unit>
+      <trans-unit id="43" approved="yes">
+        <source>A página solicitada não pôde ser encontrado</source> <target state="translated">Page not found</target> </trans-unit>
+      <trans-unit id="44" approved="yes">
+        <source>Ops! Ocorreu um terrível erro :(</source>
+        <target state="translated">Oops! A terrible error :(</target>
+      </trans-unit>
+    <trans-unit id="45" approved="yes"><source>conheça outros projetos que utilizam</source><target state="translated">discover other projects that use</target></trans-unit><trans-unit id="46" approved="yes"><source>Este site utiliza</source><target state="translated">This website uses</target></trans-unit><trans-unit id="47" approved="yes"><source>e</source><target state="translated">and</target></trans-unit><trans-unit id="48" approved="yes"><source>O conteúdo e os projetos aqui publicados estão livres para cópia, uso e distribuição.</source><target state="translated">The content and designs posted here are free to copy, use and distribution.</target></trans-unit><trans-unit id="49"><source>trans %%var%%", array_merge(array("%%var%%" =&gt; %s), %s), "messages</source><target/></trans-unit><trans-unit id="50" approved="yes"><source>e HTML5</source><target state="translated">and HTML5</target></trans-unit><trans-unit id="51" approved="yes"><source>Português</source><target state="translated">Portuguese</target></trans-unit><trans-unit id="52" approved="yes"><source>Inglês</source><target state="translated">English</target></trans-unit><trans-unit id="53" approved="yes"><source>Espanhol</source><target state="translated">Spanish</target></trans-unit></body>
+  </file>
 </xliff>
