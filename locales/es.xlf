@@ -12,10 +12,7 @@
         <source>Sobre</source>
         <target state="translated">Sobre</target>
       </trans-unit>
-      <trans-unit id="3" approved="yes">
-        <source>Espaço laboratorial para desenvolvimento de aplicações e websites, utilizando prioritariamente soluções codigo-aberto.</source>
-        <target state="translated">Espacio laboratorial para desarrollo de aplicativos y websites, con soluciones codigo-abierto principalmente</target>
-      </trans-unit>
+      
       <trans-unit id="4" approved="yes">
         <source>Repositórios</source>
         <target state="translated">Repositorios</target>
@@ -113,9 +110,7 @@
         <target state="translated">Inicio</target>
       </trans-unit>
       <trans-unit id="28" approved="yes">
-        <source>Este site utiliza</source>
-        <target state="translated">Este website utiliza</target>
-      </trans-unit>
+        <source>Este site utiliza</source> <target state="translated">Este sitio web utiliza</target> </trans-unit>
       <trans-unit id="29" approved="yes">
         <source>e</source>
         <target state="translated">y</target>
@@ -196,6 +191,6 @@
         <source>Ops! Ocorreu um terrível erro :(</source>
         <target state="translated">¡Huy! Ocurrió un terrible error :(</target>
       </trans-unit>
-    <trans-unit id="49" approved="yes"><source>e HTML5</source><target state="translated">y HTML5</target></trans-unit><trans-unit id="50" approved="yes"><source>Português</source><target state="translated">Portugués</target></trans-unit><trans-unit id="51" approved="yes"><source>Inglês</source><target state="translated">Inglés</target></trans-unit><trans-unit id="52" approved="yes"><source>Espanhol</source><target state="translated">Español</target></trans-unit></body>
+    <trans-unit id="53" approved="yes"><source>Espaço laboratorial que concentra "experimentos" na área de desenvolvimento de aplicações e websites, priorizando soluções codigo-aberto.</source><target state="translated">Espacio de laboratorio que mantiene "experimentos" en el desarrollo de aplicativos y sitios web, dando prioridad a las soluciones de código abierto.</target></trans-unit></body>
   </file>
 </xliff>

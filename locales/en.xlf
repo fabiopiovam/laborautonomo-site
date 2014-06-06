@@ -12,10 +12,7 @@
         <source>Sobre</source>
         <target state="translated">About</target>
       </trans-unit>
-      <trans-unit id="3" approved="yes">
-        <source>Espaço laboratorial para desenvolvimento de aplicações e websites, utilizando prioritariamente soluções codigo-aberto.</source>
-        <target state="translated">Laboratory space for developing applications and websites using primarily open source solutions.</target>
-      </trans-unit>
+      
       <trans-unit id="4" approved="yes">
         <source>Repositórios</source>
         <target state="translated">Repositories</target>
@@ -154,6 +151,6 @@
         <source>Ops! Ocorreu um terrível erro :(</source>
         <target state="translated">Oops! A terrible error :(</target>
       </trans-unit>
-    <trans-unit id="45" approved="yes"><source>conheça outros projetos que utilizam</source><target state="translated">discover other projects that use</target></trans-unit><trans-unit id="46" approved="yes"><source>Este site utiliza</source><target state="translated">This website uses</target></trans-unit><trans-unit id="47" approved="yes"><source>e</source><target state="translated">and</target></trans-unit><trans-unit id="48" approved="yes"><source>O conteúdo e os projetos aqui publicados estão livres para cópia, uso e distribuição.</source><target state="translated">The content and designs posted here are free to copy, use and distribution.</target></trans-unit><trans-unit id="49"><source>trans %%var%%", array_merge(array("%%var%%" =&gt; %s), %s), "messages</source><target/></trans-unit><trans-unit id="50" approved="yes"><source>e HTML5</source><target state="translated">and HTML5</target></trans-unit><trans-unit id="51" approved="yes"><source>Português</source><target state="translated">Portuguese</target></trans-unit><trans-unit id="52" approved="yes"><source>Inglês</source><target state="translated">English</target></trans-unit><trans-unit id="53" approved="yes"><source>Espanhol</source><target state="translated">Spanish</target></trans-unit></body>
+    <trans-unit id="45" approved="yes"><source>conheça outros projetos que utilizam</source><target state="translated">discover other projects that use</target></trans-unit><trans-unit id="46" approved="yes"><source>Este site utiliza</source><target state="translated">This website uses</target></trans-unit><trans-unit id="47" approved="yes"><source>e</source><target state="translated">and</target></trans-unit><trans-unit id="48" approved="yes"><source>O conteúdo e os projetos aqui publicados estão livres para cópia, uso e distribuição.</source><target state="translated">The content and designs posted here are free to copy, use and distribution.</target></trans-unit><trans-unit id="54" approved="yes"><source>Espaço laboratorial que concentra "experimentos" na área de desenvolvimento de aplicações e websites, priorizando soluções codigo-aberto.</source><target state="translated">Laboratory space that stores "experiments" in the development of applications and websites, prioritizing open source solutions.</target></trans-unit></body>
   </file>
 </xliff>
