@@ -34,7 +34,11 @@ $app['repos.config'] = array(
     'github'    => array(
         'user'      => 'laborautonomo',
         'repo'      => 'laborautonomo-site',
-        'version'   => 'v3'
+        'version'   => 'v3',
+        'locale'   => array(
+            'default' => 'en',
+            'optional' => array('pt_BR','es')
+        )
     )
 );
 

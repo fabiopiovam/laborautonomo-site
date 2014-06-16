@@ -186,7 +186,18 @@ class Repositories {
         return ($return_json) ? $json_langs : true;
     }
     
+    /*
+     * Solution found in http://subinsb.com/php-check-if-string-is-json
+     * */
+    public function is_json($string) {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    } 
+    
     public function get_readme($name) {
+        if (file_exists($this->readme_store . $name . ".{$this->_app['locale']}.html")) 
+            return file_get_contents($this->readme_store . $name . ".{$this->_app['locale']}.html");
+        
         if (file_exists($this->readme_store . $name . '.html')) 
             return file_get_contents($this->readme_store . $name . '.html');
         
@@ -196,15 +207,23 @@ class Repositories {
     public function download_readme($criteria = array('fork' => false), $return_html=false) {
         if(!is_dir($this->readme_store)) mkdir($this->readme_store, 0777, true);
         
-        $repos = json_decode($this->get_repositories($criteria),true);
+        $repos              = json_decode($this->get_repositories($criteria),true);
+        $locale_optional    = $this->_app['repos.config']['github']['locale']['optional'];
+        $locale_default     = $this->_app['repos.config']['github']['locale']['default'];
+        $arr_locale         = array_merge($locale_optional, array($locale_default));
         
         foreach ($repos as $key => $repo) {
-            $readme_html = $this->_get_json(
-                $this->repos_url . $repo["name"] . '/readme', 
-                array(CURLOPT_HTTPHEADER => array('Accept: application/vnd.github.v3.html+json'))
-            );
-            
-            file_put_contents($this->readme_store . $repo["name"] . '.html', $readme_html);
+            foreach ($arr_locale as $lang) {
+                $lang = ($lang == $locale_default) ? "" : '.' . trim($lang);
+                
+                $readme_html = $this->_get_json(
+                    $this->repos_url . $repo["name"] . "/contents/README{$lang}.md", 
+                    array(CURLOPT_HTTPHEADER => array('Accept: application/vnd.github.v3.html+json'))
+                );
+                
+                if (!$this->is_json($readme_html)) //if has error the $readme_html variable is json with message content
+                    file_put_contents($this->readme_store . $repo["name"] . $lang . '.html', $readme_html);
+            }
         }
         
         return ($return_html) ? $readme_html : true;
