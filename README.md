@@ -9,7 +9,7 @@ Using
 * [Silex Micro-framework](http://silex.sensiolabs.org/)
 * [html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
 * [GitHub API](https://developer.github.com/v3/)
-* [xliff-file-generator v1.0.0](https://github.com/laborautonomo/xliff-file-generator)
+* [xliff-file-generator](https://github.com/laborautonomo/xliff-file-generator)
 * [Virtaal translate](https://github.com/translate/virtaal)
 
 Installation / Usage
@@ -33,4 +33,4 @@ Installation / Usage
 The project's page is generated based in GitHub's readme. When you make first access of a project page, the html is generated. But, to update this generated file, call `src/cron-data-updates.php` file using task Cron (as a suggestion). 
 Verify the necessary frequency (we call once a week).
 
-This script also updates the releases of projects.
+This script also updates the Releases of projects.
