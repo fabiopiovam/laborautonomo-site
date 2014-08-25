@@ -15,7 +15,7 @@ class Repositories {
     
     function __construct(\Silex\Application $app){
         $this->_app                 = $app;
-        $this->repos                = "https://api.github.com/users/{$this->_app['repos.config']['github']['user']}/repos?sort=updated&direction=desc";
+        $this->repos                = "https://api.github.com/users/{$this->_app['repos.config']['github']['user']}/repos?sort=updated&direction=desc&per_page=200";
         $this->repos_url            = "https://api.github.com/repos/{$this->_app['repos.config']['github']['user']}/";
         $this->readme_store         = $this->_app['repos.config']['storage'] . 'pages/';
         $this->releases_store       = $this->_app['repos.config']['storage'] . 'releases/';
