@@ -10,3 +10,4 @@ composer.lock
 
 # Configuration
 etc/swiftmailer.options.php
+.vagrant/
