@@ -27,7 +27,7 @@
 
 .markdown-body h1 {
     border-bottom: 1px solid #DDDDDD;
-    font-size: 2.5em;
+    font-size: 2em !important;
 }
 
 .markdown-body pre {
@@ -59,7 +59,7 @@
 
 .markdown-body h2 {
     border-bottom: 1px solid #EEEEEE;
-    font-size: 2em;
+    font-size: 1.7em !important;
 }
 
 tt, code, pre {
