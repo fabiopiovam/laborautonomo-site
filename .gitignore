@@ -1,5 +1,7 @@
 # Silex
 /vendor
+cache/*
+!cache/.empty
 
 # Composer
 composer.phar
