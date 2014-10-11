@@ -11,5 +11,6 @@ composer.lock
 .project
 
 # Configuration
-etc/swiftmailer.options.php
+etc/settings_local.php
+etc/settings_production.php
 .vagrant/
