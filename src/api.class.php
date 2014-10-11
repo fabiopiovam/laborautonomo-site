@@ -12,6 +12,7 @@ class Repositories {
     public  $releases_store;
     public  $repos_list_filename;
     public  $repos_languages;
+    public  $repos_token;
     
     function __construct(\Silex\Application $app){
         $this->_app                 = $app;
@@ -21,12 +22,14 @@ class Repositories {
         $this->releases_store       = $this->_app['repos.config']['storage'] . 'releases/';
         $this->repos_list_filename  = 'repos-' . date('Y-m-d') . '.json';
         $this->repos_languages      = $this->_app['repos.config']['storage'] . 'repos-languages-' . date('Y-m-d') . '.json';
+		$this->repos_token			= $this->_app['repos.config']['github']['token'];
     }
     
     private function _get_json($url,$params = array()){
         $cURL = curl_init($url);
         curl_setopt($cURL, CURLOPT_USERAGENT, $this->_app['repos.config']['github']['repo']);
         curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($cURL,CURLOPT_USERPWD,"{$this->repos_token}:x-oauth-basic");
         
         foreach ($params as $name => $value) curl_setopt($cURL, $name, $value);
         

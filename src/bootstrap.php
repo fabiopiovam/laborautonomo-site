@@ -19,7 +19,7 @@ $app['translator.path']     = __DIR__ . '/../locales';
 $app['cache.path']          = __DIR__ . '/../cache';
 $app['cache.max_age']       = $app['cache.expires'] = 3600 * 24 * 90;
 $app['mail.to']             = array('fabio@laborautonomo.org' => 'Fabio - LaborAutonomo.org');
-$app['smtp.options']        = (file_exists(__DIR__.'/../etc/swiftmailer.options.php')) ? require_once __DIR__.'/../etc/swiftmailer.options.php' : array(
+$app['smtp.options']        = array(
     'host' => 'mail.your-domain.com',
     'port' => '587',
     'username' => 'user@your-domain.com',
@@ -33,6 +33,7 @@ $app['repos.config'] = array(
     'storage'   =>  __DIR__ . '/../storage/', //required permission 777
     'github'    => array(
         'user'      => 'laborautonomo',
+        'token'		=> 'your_token', //more information: https://developer.github.com/v3/auth/#basic-authentication
         'repo'      => 'laborautonomo-site',
         'version'   => 'v3',
         'locale'   => array(
@@ -42,6 +43,13 @@ $app['repos.config'] = array(
     )
 );
 
+
+if (file_exists(__DIR__.'/../etc/settings_production.php')) 
+	require_once __DIR__.'/../etc/settings_production.php';
+
+if (file_exists(__DIR__.'/../etc/settings_local.php')) 
+	require_once __DIR__.'/../etc/settings_local.php';
+	
 
 //Registers Symfony Session component extension
 $app->register(new Silex\Provider\SessionServiceProvider());
