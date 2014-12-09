@@ -43,6 +43,7 @@ $app['repos.config'] = array(
     )
 );
 
+$google_analytics = 'UA-99999999-9';
 
 if (file_exists(__DIR__.'/../etc/settings_production.php')) 
 	require_once __DIR__.'/../etc/settings_production.php';
@@ -88,7 +89,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'debug' => $app['debug']),
 ));
 $app['twig']->addFilter('nl2br', new Twig_Filter_Function('nl2br', array('is_safe' => array('html'))));
-
+$app['twig']->addGlobal('GOOGLE_ANALYTICS', $google_analytics);
 
 //SWIFTMAILER
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
