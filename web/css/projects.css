@@ -1,5 +1,14 @@
 /* HIGHLIGHT */
 
+.markdown-body .highlight pre, .markdown-body pre {
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
 .markdown-body
 {
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
@@ -580,6 +589,14 @@
 }
 
 /* HIGHLIGHT */
+
+.markdown-body {
+    color: #333;
+}
+
+.markdown-body pre {
+    white-space: pre !important;
+}
 
 .markdown-body a {
     color: #4183c4;
