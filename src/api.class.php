@@ -16,7 +16,8 @@ class Repositories {
     
     function __construct(\Silex\Application $app){
         $this->_app                 = $app;
-        $this->repos                = "https://api.github.com/users/{$this->_app['repos.config']['github']['user']}/repos?sort=updated&direction=desc&per_page=200";
+        //$this->repos                = "https://api.github.com/users/{$this->_app['repos.config']['github']['user']}/repos?sort=updated&direction=desc&per_page=200";
+        $this->repos                = "https://api.github.com/search/repositories?q=user:{$this->_app['repos.config']['github']['user']}&sort=updated&order=desc";
         $this->repos_url            = "https://api.github.com/repos/{$this->_app['repos.config']['github']['user']}/";
         $this->readme_store         = $this->_app['repos.config']['storage'] . 'pages/';
         $this->releases_store       = $this->_app['repos.config']['storage'] . 'releases/';
@@ -26,10 +27,11 @@ class Repositories {
     }
     
     private function _get_json($url,$params = array()){
-        $cURL = curl_init($url);
+        $cURL = curl_init();
+        curl_setopt($cURL, CURLOPT_URL, $url); 
         curl_setopt($cURL, CURLOPT_USERAGENT, $this->_app['repos.config']['github']['repo']);
         curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($cURL,CURLOPT_USERPWD,"{$this->repos_token}:x-oauth-basic");
+		curl_setopt($cURL, CURLOPT_USERPWD,"{$this->repos_token}:x-oauth-basic");
         
         foreach ($params as $name => $value) curl_setopt($cURL, $name, $value);
         
@@ -45,7 +47,8 @@ class Repositories {
         
         $this->garbage_collection();
         
-        $data = $this->_get_json($this->repos);
+        $data = json_decode($this->_get_json($this->repos));
+		$data = json_encode($data->items);
         file_put_contents($this->_app['repos.config']['storage'] . $this->repos_list_filename, $data);
         
         return $data;

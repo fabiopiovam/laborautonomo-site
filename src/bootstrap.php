@@ -8,11 +8,7 @@ $app = new Silex\Application();
 
 
 //SETTINGS
-$app['debug']               = isset($_SERVER['SERVER_ADDR']) && (preg_match("/192\.168\.[0-9]{1,3}\.[0-9]{1,3}/", $_SERVER['SERVER_ADDR']) 
-                                || $_SERVER['SERVER_ADDR'] == "127.0.0.1");
-date_default_timezone_set('America/Sao_Paulo');
-ini_set('display_errors', $app['debug']);
-error_reporting(E_ALL ^ E_NOTICE);
+$app['debug']               = false;
 $app['twig.content_path']   = __DIR__.'/../views';
 $app['translator.locales']  = array('es','en');
 $app['translator.path']     = __DIR__ . '/../locales';
@@ -50,7 +46,10 @@ if (file_exists(__DIR__.'/../etc/settings_production.php'))
 
 if (file_exists(__DIR__.'/../etc/settings_local.php')) 
 	require_once __DIR__.'/../etc/settings_local.php';
-	
+
+date_default_timezone_set('America/Sao_Paulo');
+ini_set('display_errors', $app['debug']);
+error_reporting(E_ALL ^ E_NOTICE);
 
 //Registers Symfony Session component extension
 $app->register(new Silex\Provider\SessionServiceProvider());
@@ -98,7 +97,7 @@ $app['swiftmailer.options'] = $app['smtp.options'];
 
 // Registers Monolog extension
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile'       => __DIR__ . '/../log/app.log',
+    'monolog.logfile'       => __DIR__ . '/../storage/app.log',
     'monolog.name'          => 'app',
     'monolog.level'         => 300 //WARNING
 ));
