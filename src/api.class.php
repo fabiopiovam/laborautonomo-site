@@ -180,7 +180,8 @@ class Repositories {
             $arr_data = json_decode($data,true);
             foreach ($arr_data as $lang => $num) {
                 if(!isset($total[$lang])) $total[$lang] = 0;
-                $total[$lang] += $num;
+                //$total[$lang] += $num;
+                $total[$lang] += 1;
             }
         }
         
